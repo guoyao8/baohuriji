@@ -3,5 +3,11 @@
   "builds": [{ "src": "package.json", "use": "@vercel/static-build" }],
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/assets/(.*)", "destination": "/assets/$1" },
+    { "source": "/favicon.svg", "destination": "/favicon.svg" },
+    { "source": "/manifest.json", "destination": "/manifest.json" },
+    { "source": "/icon-:size.png", "destination": "/icon-:size.png" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
